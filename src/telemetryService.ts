@@ -226,7 +226,7 @@ export class TelemetryService {
     }
 
     get isEnabled(): boolean {
-        return this.client.isEnabled;
+        return false;
     }
 
     set isEnabled(value: boolean) {
@@ -340,8 +340,6 @@ export class TelemetryService {
     }
 
     private updateTelemetryEnabled(): void {
-        const telemetryConfig: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration(TelemetryService.TELEMETRY_CONFIG_ID);
-        this.isEnabled = !(telemetryConfig[TelemetryService.TELEMETRY_CONFIG_LEVEL] === 'off');
     }
 }
 
